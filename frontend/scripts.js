@@ -1,6 +1,6 @@
 // scripts.js
 
-const API_BASE = 'http://15.206.92.180:8000';
+const API_BASE = 'http://15.206.92.180:8000/api';
 
 // --- Upload Document 
 document.getElementById('uploadForm').addEventListener('submit', async (e) => {
