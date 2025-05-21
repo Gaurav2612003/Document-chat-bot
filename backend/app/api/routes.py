@@ -18,9 +18,10 @@ import logging
 logger = logging.getLogger(__name__)
 router = APIRouter()
 
-"""
+
 SUPPORTED_EXTENSIONS = {".pdf", ".docx", ".pptx", ".ppt", ".txt", ".png", ".jpg", ".jpeg"}
 
+"""
 @router.post("/upload/")
 async def upload_file(file: UploadFile = File(...)):
     ext = os.path.splitext(file.filename)[1].lower()
