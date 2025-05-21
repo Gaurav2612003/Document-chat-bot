@@ -1,4 +1,4 @@
-const API_BASE = 'http://15.206.92.180:8000/api';
+const API_BASE = 'http://15.206.92.180:8000';
 
 async function fetchDocuments() {
   const res = await fetch(`${API_BASE}/documents`);
