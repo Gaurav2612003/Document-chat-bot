@@ -13,15 +13,13 @@ from typing import Optional
 from app.services import document_registry
 from pydantic import BaseModel
 from typing import List
-import logging
 
-logger = logging.getLogger(__name__)
 router = APIRouter()
 
 
 SUPPORTED_EXTENSIONS = {".pdf", ".docx", ".pptx", ".ppt", ".txt", ".png", ".jpg", ".jpeg"}
 
-"""
+
 @router.post("/upload/")
 async def upload_file(file: UploadFile = File(...)):
     ext = os.path.splitext(file.filename)[1].lower()
@@ -80,44 +78,6 @@ async def upload_file(file: UploadFile = File(...)):
         return {"doc_id": doc_id, "filename": file.filename, "doc_type": doc_type}
 
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Failed to process file: {str(e)}")
-"""
-
-@router.post("/upload/")
-async def upload_file(file: UploadFile = File(...)):
-    ext = os.path.splitext(file.filename)[1].lower()
-    logger.info(f"Received file with extension: {ext}")
-
-    if ext not in SUPPORTED_EXTENSIONS:
-        raise HTTPException(status_code=400, detail=f"Unsupported file type: {ext}")
-
-    file_path = f"data/{file.filename}"
-    os.makedirs("data", exist_ok=True)
-
-    try:
-        with open(file_path, "wb") as f:
-            logger.info("Saving file...")
-            f.write(await file.read())
-
-        logger.info(f"File saved at: {file_path}")
-
-        if ext == ".pdf":
-            parsed = file_parser.extract_text_from_pdf(file_path)
-        elif ext in (".docx", ".pptx", ".ppt", ".txt"):
-            ...
-        else:
-            ...
-
-        logger.info("Text extracted, indexing document...")
-        doc_id = str(uuid.uuid4())
-        document_loader.index_document(doc_id, parsed, metadata={"filename": file.filename})
-        ...
-
-        logger.info("Upload complete.")
-        return {"doc_id": doc_id, "filename": file.filename, "doc_type": doc_type}
-
-    except Exception as e:
-        logger.exception("File processing failed:")
         raise HTTPException(status_code=500, detail=f"Failed to process file: {str(e)}")
 
 
