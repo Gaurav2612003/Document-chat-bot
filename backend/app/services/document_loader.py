@@ -2,6 +2,8 @@ from nltk.tokenize import sent_tokenize
 from app.config import settings
 from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
 import chromadb
+import nltk
+nltk.download('punkt_tab')
 
 # Initialize ChromaDB client here if not already initialized
 chroma = chromadb.PersistentClient(settings.VECTOR_DB_DIR)
