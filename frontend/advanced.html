@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Advanced Document Tools</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-header">Advanced Document Tools</div>
+
+    <div class="advanced-section">
+      <label for="filterType">Filter by Type:</label>
+      <select id="filterType">
+        <option value="">All Types</option>
+        <option value="report">Report</option>
+        <option value="invoice">Invoice</option>
+        <option value="research">Research Paper</option>
+      </select>
+
+      <label for="filterAuthor">Filter by Author:</label>
+      <input type="text" id="filterAuthor" placeholder="Author name..." />
+
+      <label for="filterDate">Filter by Date:</label>
+      <input type="date" id="filterDate" />
+      
+      <button onclick="applyFilters()">Apply Filters</button>
+    </div>
+
+    <div class="advanced-section">
+      <button onclick="identifyThemes()">Identify Themes</button>
+      <button onclick="viewCitationMap()">View Citation Map</button>
+      <button onclick="exportToPDF()">Export to PDF</button>
+    </div>
+
+    <div class="bottom-buttons">
+      <button onclick="window.location.href='index.html'">⬅Back to Chat</button>
+    </div>
+  </div>
+
+  <script src="advanced.js"></script>
+</body>
+</html>

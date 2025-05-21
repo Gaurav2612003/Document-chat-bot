@@ -1,0 +1,26 @@
+__pycache__/
+*.pyc
+.env
+*.env
+.vscode/
+node_modules/
+*.log
+dist/
+.build/
+*.db
+frontend/.next/
+frontend/.vercel/
+
+
+# Chatbot Theme Identifier
+
+A full-stack AI chatbot that performs document research and theme identification using OCR, FastAPI, Groq, ChromaDB, and a user-friendly frontend.
+
+## Structure
+- `backend/` – FastAPI app (Groq + OCR + ChromaDB)
+- `frontend/` – Static site (HTML, JS, CSS)
+
+## Deployment
+- Backend: Fly.io
+- Frontend: Vercel
+.vercel

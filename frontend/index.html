@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document Chatbot</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-header">Document Chatbot</div>
+
+    <form id="uploadForm" class="section upload-section">
+      <input type="file" id="fileInput" />
+      <button type="submit">Upload</button>
+      <div id="uploadStatus"></div>
+    </form>
+
+    <div id="chatMessages" class="chat-box"></div>
+
+    <form id="queryForm" class="query-section">
+      <input type="text" id="userInput" placeholder="Ask a question..." />
+      <button type="submit">Send</button>
+    </form>
+
+    <div class="bottom-buttons">
+      <button onclick="window.location.href='advanced.html'">More Tools</button>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
