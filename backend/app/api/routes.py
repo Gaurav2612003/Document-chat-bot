@@ -14,6 +14,7 @@ from app.services import document_registry
 from pydantic import BaseModel
 from typing import List
 
+
 router = APIRouter()
 
 
