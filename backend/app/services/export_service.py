@@ -6,15 +6,19 @@ from datetime import datetime
 EXPORT_DIR = "export"
 os.makedirs(EXPORT_DIR, exist_ok=True)
 
+CSV_FIELDNAMES = ["doc_id", "citation", "sentence", "score"]
+
 def export_to_csv(data: list, filename: str = None):
     filename = filename or f"citation_export_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
     path = os.path.join(EXPORT_DIR, filename)
 
     with open(path, "w", newline='', encoding="utf-8") as csvfile:
-        writer = csv.DictWriter(csvfile, fieldnames=["doc_id", "citation", "sentence", "score"])
+        writer = csv.DictWriter(csvfile, fieldnames=CSV_FIELDNAMES)
         writer.writeheader()
         for row in data:
-            writer.writerow(row)
+            # Filter out unexpected fields
+            filtered_row = {k: row.get(k, "") for k in CSV_FIELDNAMES}
+            writer.writerow(filtered_row)
 
     return path
 
@@ -33,5 +37,3 @@ def export_to_pdf(data: list, filename: str = None):
 
     pdf.output(path)
     return path
-
-
