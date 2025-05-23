@@ -26,8 +26,8 @@ Document metadata management (author, date, type, relevance)
 Backend Setup
 1. Clone the repository
 bash
-git clone https://github.com/yourusername/document-chatbot-backend.git
-cd document-chatbot-backend
+https://github.com/Gaurav2612003/gaurav-joshi-wasserstoff-AiInternTask
+cd backend
 2. Create and activate a virtual environment
 bash
 python -m venv venv
@@ -44,7 +44,6 @@ bash
 sudo apt install tesseract-ocr
 5. Prepare folders and registry file
 bash
-mkdir -p vector_db data uploads
 touch data/document_registry.json
 6. Run the backend server
 bash
