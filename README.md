@@ -134,8 +134,7 @@ scikit-learn
 Pillow
 
 
-fail :
-The backend server runs public server on http://15.206.92.180:8000/docs
+fail : (The backend server runs public server on http://15.206.92.180:8000/docs)
 
 The frontend runs public server on https://gaurav-joshi-wasserstoff-ai-intern-task.vercel.app
 
