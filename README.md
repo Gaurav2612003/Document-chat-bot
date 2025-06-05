@@ -1,4 +1,4 @@
-# gaurav-joshi-wasserstoff-AiInternTask
+# Document chatbot
 
 Got it! Here’s the updated README.md including both backend and frontend details, plus deployment notes for both (with Vercel for frontend):
 
